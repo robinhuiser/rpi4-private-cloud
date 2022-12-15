@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo hi > /data/test.txt

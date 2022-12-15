@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  deployer:
+    build: 
+      context: deployer/
+    image: robinhuiser/rpi4-private-cloud-deployer
+
+  download-os-image:
+    image: robinhuiser/rpi4-private-cloud-deployer
+    container_name: download-os-image
+    command: download-os-image
+    env_file:
+      - ./release.env
+      - ./.env
+    volumes:
+      - ./work:/data
+    depends_on:
+      - deployer
+
+# volumes:

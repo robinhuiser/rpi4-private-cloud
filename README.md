@@ -27,9 +27,11 @@ The logic in this repository implements:
   * Kubernetes object storage - [Minio](https://min.io/)
   * Local Docker registry - [Registry service](https://hub.docker.com/_/registry) and [Registry UI](https://hub.docker.com/r/joxit/docker-registry-ui)
 * **Middleware**
-  * Database - [PostgreSQL v15](https://www.postgresql.org/)
+  * Database - [TiDB - a cloud native distributed, MySQL compatible DB](https://www.postgresql.org/)
   * Message broker - [NATS](https://nats.io/) 
   * Workflow engine - [Argo Workflows](https://argoproj.github.io/workflows/)
+  * OAuth2 / OIDC provider - [Ory Hydra](https://www.ory.sh/federated-identity-management/)
+  * Identity server - [Ory Kratos](https://www.ory.sh/identity-authentication/)
 * **Operations**
   * Host based monitoring - [Glances](https://nicolargo.github.io/glances/)
   * Container management - [Kubernetes Dashboard](https://github.com/kubernetes/dashboard) 
@@ -41,9 +43,11 @@ The logic in this repository implements:
 
 ## Prerequisites
 
-Since most of the logic is executed in a [Docker](./Dockerfile) container - in order to avoid installing all utilities with required versions locally - you need only a limited set of software pre-installed on your local machine: 
+In order to avoid installing on your local machine the magnitude of utilities and avoid conflicts with versions nearly all logic will be executed in a [Docker](./Dockerfile) container.
 
-* Docker + Docker Compose (any recent version will do)
+You need only a limited set of software pre-installed on your local machine: 
+
+* `Docker` & `docker-compose` (any recent version will do)
 
 ### Proxy node
 
